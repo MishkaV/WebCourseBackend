@@ -9,7 +9,7 @@ plugins {
 
 group = "io.mishka"
 version = "0.0.1-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_17
+java.sourceCompatibility = JavaVersion.VERSION_18
 
 repositories {
 	mavenCentral()
@@ -27,8 +27,22 @@ dependencies {
 tasks.withType<KotlinCompile> {
 	kotlinOptions {
 		freeCompilerArgs = listOf("-Xjsr305=strict")
-		jvmTarget = "17"
+		jvmTarget = "18"
 	}
+}
+
+tasks.withType<Jar> {
+	manifest {
+		attributes["Main-Class"] = "io.mishka.notes.NotesApplicationKt"
+	}
+
+	duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+	from(sourceSets.main.get().output)
+
+	dependsOn(configurations.runtimeClasspath)
+	from({
+		configurations.runtimeClasspath.get().filter { it.name.endsWith("jar") }.map { zipTree(it) }
+	})
 }
 
 tasks.withType<Test> {
