@@ -1,1 +1,0 @@
-web: java -jar build/libs/notes_web.jar --server.port=$PORT
