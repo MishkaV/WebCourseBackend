@@ -1,25 +1,15 @@
 package io.mishka.notes.controller
 
-import io.mishka.notes.entities.Note
+import io.mishka.notes.entities.Friend
+import io.mishka.notes.entities.friends
 import org.springframework.web.bind.annotation.*
 
 @RestController
 class NotesController {
 
-    private val notes: MutableList<Note> = mutableListOf()
-
-    @GetMapping("/about")
-    fun about(): String {
-        return "COOL NOTES ABOUT"
+    @GetMapping("/friends")
+    fun about(): List<Friend> {
+        return friends
     }
 
-    @GetMapping("/notes")
-    fun getAllNotes(): List<Note> {
-        return notes
-    }
-
-    @PostMapping("/new-note")
-    fun setNewNote(@RequestBody note: Note) {
-        notes.add(note)
-    }
 }
