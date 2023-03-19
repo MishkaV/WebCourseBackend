@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.*
 @RestController
 class NotesController(val service: MessageService) {
 
-    init {
-        friends.forEach { service.saveFriend(it) }
-    }
-
     @GetMapping("/friends")
-    fun about(): List<Friend> {
+    fun getFriends(): List<Friend> {
         return service.getFriends()
     }
-
+    @GetMapping("/generate-friends")
+    fun generateFriends(): List<Friend> {
+        friends.forEach { service.saveFriend(it) }
+        return service.getFriends()
+    }
 }
