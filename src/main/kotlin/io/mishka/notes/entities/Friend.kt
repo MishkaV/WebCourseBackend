@@ -8,6 +8,12 @@ enum class Gender {
     other
 }
 
+fun String.toGender() = when (this) {
+    "female" -> Gender.female
+    "male" -> Gender.male
+    else -> Gender.other
+}
+
 data class Friend(
         val name: String,
         val surname: String,

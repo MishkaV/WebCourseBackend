@@ -1,0 +1,12 @@
+2023-03-19 12:56:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS friends ( name VARCHAR PRIMARY KEY, surname VARCHAR NOT NULL, age INT NOT NULL, [*])"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXISTS friends ( name VARCHAR PRIMARY KEY, surname VARCHAR NOT NULL, age INT NOT NULL, ) [42001-214]
+2023-03-19 12:57:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS friends ( name VARCHAR PRIMARY KEY, surname VARCHAR NOT NULL, age INT NOT NULL, [*])"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXISTS friends ( name VARCHAR PRIMARY KEY, surname VARCHAR NOT NULL, age INT NOT NULL, ) [42001-214]
+2023-03-19 12:58:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "CREATE TABLE IF NOT EXISTS friends ( name VARCHAR(60) PRIMARY KEY, surname VARCHAR NOT NULL, age INT NOT NULL, county VARCHAR NOT NULL, city VARCHAR NOT NULL, gender VARCHAR NOT NULL, [*])"; expected "identifier"; SQL statement:
+CREATE TABLE IF NOT EXISTS friends ( name VARCHAR(60) PRIMARY KEY, surname VARCHAR NOT NULL, age INT NOT NULL, county VARCHAR NOT NULL, city VARCHAR NOT NULL, gender VARCHAR NOT NULL, ) [42001-214]
+2023-03-19 13:06:23 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "CAST(X'aced00057e72001f696f2e6d6973686b612e6e6f7465732e656e7469746965732e47656e64657200000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400046d616c65' AS JAVA_OBJECT) (FRIENDS: ""GENDER"" CHARACTER VARYING NOT NULL)"; SQL statement:
+insert into friends values ( ?, ?, ?, ?, ?, ?) [22018-214]
