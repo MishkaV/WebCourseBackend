@@ -30,4 +30,12 @@ class NotesController(val service: MessageService) {
     fun getMessages(): List<Messages> {
         return messages
     }
+
+    /**
+     * Posts
+     */
+    @GetMapping("/messages")
+    fun getPosts(): List<Post> {
+        return posts
+    }
 }
