@@ -1,9 +1,6 @@
 package io.mishka.notes.controller
 
-import io.mishka.notes.entities.Friend
-import io.mishka.notes.entities.News
-import io.mishka.notes.entities.friends
-import io.mishka.notes.entities.newsList
+import io.mishka.notes.entities.*
 import io.mishka.notes.service.MessageService
 import org.springframework.web.bind.annotation.*
 
@@ -11,17 +8,11 @@ import org.springframework.web.bind.annotation.*
 class NotesController(val service: MessageService) {
 
     /**
-     * Friends
+     * Users
      */
-    @GetMapping("/friends")
-    fun getFriends(): List<Friend> {
-        return service.getFriends()
-    }
-
-    @GetMapping("/generate-friends")
-    fun generateFriends(): List<Friend> {
-        friends.forEach { service.saveFriend(it) }
-        return service.getFriends()
+    @GetMapping("/users")
+    fun getFriends(): List<User> {
+        return users
     }
 
     /**
@@ -30,11 +21,5 @@ class NotesController(val service: MessageService) {
     @GetMapping("/news")
     fun getNews(): List<News> {
         return newsList
-    }
-
-    @GetMapping("/generate-news")
-    fun generateNews(): List<News> {
-        newsList.forEach { service.saveNews(it) }
-        return service.getNews()
     }
 }
