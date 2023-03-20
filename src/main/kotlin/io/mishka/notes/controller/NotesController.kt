@@ -22,4 +22,12 @@ class NotesController(val service: MessageService) {
     fun getNews(): List<News> {
         return newsList
     }
+
+    /**
+     * Messages
+     */
+    @GetMapping("/messages")
+    fun getMessages(): List<Messages> {
+        return messages
+    }
 }
