@@ -38,4 +38,12 @@ class NotesController(val service: MessageService) {
     fun getPosts(): List<Post> {
         return posts
     }
+
+    /**
+     * Groups
+     */
+    @GetMapping("/groups")
+    fun getGroups(): List<Group> {
+        return groups
+    }
 }
