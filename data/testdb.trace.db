@@ -10,3 +10,6 @@ CREATE TABLE IF NOT EXISTS friends ( name VARCHAR(60) PRIMARY KEY, surname VARCH
 2023-03-19 13:06:23 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Data conversion error converting "CAST(X'aced00057e72001f696f2e6d6973686b612e6e6f7465732e656e7469746965732e47656e64657200000000000000001200007872000e6a6176612e6c616e672e456e756d000000000000000012000078707400046d616c65' AS JAVA_OBJECT) (FRIENDS: ""GENDER"" CHARACTER VARYING NOT NULL)"; SQL statement:
 insert into friends values ( ?, ?, ?, ?, ?, ?) [22018-214]
+2023-03-20 20:40:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "TITLE CHARACTER VARYING(60)": "'https://dynaimage.cdn.cnn.com/cnn/digital-images/org/21c5e5b3-919c-4496-ae0d-91... (93)"; SQL statement:
+insert into news values ( ?, ?, ?, ?) [22001-214]
