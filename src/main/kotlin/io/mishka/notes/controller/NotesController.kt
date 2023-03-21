@@ -1,6 +1,7 @@
 package io.mishka.notes.controller
 
 import io.mishka.notes.entities.*
+import io.mishka.notes.ml.DuckGPT
 import io.mishka.notes.service.MessageService
 import org.springframework.web.bind.annotation.*
 
@@ -45,5 +46,13 @@ class NotesController(val service: MessageService) {
     @GetMapping("/groups")
     fun getGroups(): List<Group> {
         return groups
+    }
+
+    @PostMapping("/findanswer")
+    fun generateAnswer(
+            @RequestParam question: String,
+            @RequestParam description: String
+    ): String {
+        return DuckGPT.generateAnswer(question, description)
     }
 }

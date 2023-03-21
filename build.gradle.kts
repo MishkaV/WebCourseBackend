@@ -26,6 +26,12 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-jdbc")
 	implementation("com.h2database:h2:2.1.214")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+	// ML
+	implementation("org.slf4j:slf4j-api:2.0.7")
+	implementation("org.slf4j:slf4j-simple:2.0.7")
+	implementation("ai.djl.pytorch:pytorch-native-auto:1.9.1")
+	implementation("ai.djl.pytorch:pytorch-model-zoo:0.21.0")
 }
 
 tasks.withType<KotlinCompile> {
