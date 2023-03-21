@@ -17,6 +17,7 @@ object DuckGPT {
             .build()
 
     fun generateAnswer(question: String, description: String): String {
+        println("Get question - $question")
         return try {
             val model = criteria.loadModel()
             val prediction = model.newPredictor()
