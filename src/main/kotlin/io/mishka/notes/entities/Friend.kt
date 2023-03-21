@@ -20,6 +20,7 @@ data class User(
         val county: String,
         val city: String,
         val gender: Gender,
+        var id: String = "",
         var imgUrl: String = ""
 )
 
@@ -63,4 +64,9 @@ val users: MutableList<User> = mutableListOf(
         User("Madison Reyes", 20, "USA", "New York", Gender.female),
         User("Lucas Sanchez", 26, "Spain", "Barcelona", Gender.male),
         User("Harper Gomez", 23, "USA", "Los Angeles", Gender.other)
-).apply { forEachIndexed { index, user -> user.imgUrl = userAvatarUrls[index] } }
+).apply {
+    forEachIndexed { index, user ->
+        user.id = "${index + 1}"
+        user.imgUrl = userAvatarUrls[index]
+    }
+}

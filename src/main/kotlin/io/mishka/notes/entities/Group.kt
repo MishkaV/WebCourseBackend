@@ -1,6 +1,7 @@
 package io.mishka.notes.entities
 
 data class Group(
+        var id: String = "",
         val imgUrl: String,
         val groupName: String,
         val city: String
@@ -22,4 +23,8 @@ val groups = listOf(
         Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t39.30808-6/317906054_10158839314491816_8286062341564022526_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8631f5&_nc_ohc=tUZm3_Do3OEAX9n3rw5&_nc_ht=scontent.fnic3-1.fna&oh=00_AfAGpEsB7vOIMwKTvPl4HAbywsewAGwBaEA-9mK7cEC3mg&oe=641D2196", groupName = "Sacramento Real Estate", city = "Los Angles"),
         Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/152247108_3659947190789256_3321976929274404922_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8631f5&_nc_ohc=gyKaXFRtAOAAX9I0C1g&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCDOHCeVQY5GuJD40BfojTjSpYQ4eQTTXO-Q3eYMIgS_g&oe=64400FE1", groupName = "TANGO EVENTS & INFO FOR THE SAN FRANCISCO BAY AREA", city = "Saint-Petersburg"),
         Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t39.30808-6/244338679_10217579143424393_963949541646884384_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=8631f5&_nc_ohc=aAzVwp9imI4AX-9cPWn&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCGc7S1behVVbTDH-QzFnDqCBRXtU-O64e3vcHBNT9YRw&oe=641CFD94", groupName = "Gardening Ideas & More", city = "Bangkok"),
-)
+).apply {
+    forEachIndexed { index, group ->
+        group.id = "${index + 1}"
+    }
+}
