@@ -3,7 +3,7 @@ package io.mishka.notes.entities
 import kotlin.math.abs
 import kotlin.random.Random
 
-enum class GroupTheme{
+enum class GroupTheme {
     FASHION,
     SPORT,
     NEWS
@@ -11,7 +11,7 @@ enum class GroupTheme{
 
 data class Group(
         var id: String = "",
-        val imgUrl: String,
+        var imgUrl: String = "",
         val groupName: String,
         val city: String,
         val theme: String = GroupTheme.values()[abs(Random.nextInt()) % GroupTheme.values().size].toString(),
@@ -19,23 +19,42 @@ data class Group(
 )
 
 val groups = listOf(
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/138576220_10164777378360506_3194569311752435605_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=8631f5&_nc_ohc=jC7UHCbPABcAX8LeyJ6&_nc_ht=scontent.fnic3-1.fna&oh=00_AfDSDZtRtUCOh1bLt85vXnNL7xTtP_N_57W0iMbnF_5JZQ&oe=64403A58", groupName = "Celebrating R. Kelly", city = "London"),
-        Group(imgUrl = "https://www.facebook.com/images/groups/groups-default-cover-photo-2x.png", groupName = "Cash Frenzy Online", city = "Moscow"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/119992137_3093385747436948_5260284440592426210_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8631f5&_nc_ohc=Id1NLwP1x08AX_fCKjj&_nc_ht=scontent.fnic3-1.fna&oh=00_AfB4w6co4NaFIywo4DIJb9frR9nHd-PmQJ_jRNsVVjQtpg&oe=6440361B", groupName = "ZUMBA DANCE", city = "Limassol"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/104676492_3493544820664401_957076826657699757_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8631f5&_nc_ohc=wbAW2aIeEqoAX_yX69I&_nc_ht=scontent.fnic3-1.fna&oh=00_AfDHNptpi5m-lRr73gnt_T6sF76sbSLpH83DCeTPV_eLcg&oe=644041BF", groupName = "Hawaii Vacation Planning - Plan a Trip to Hawaii", city = "Hawai"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/66167750_2147261042233667_8619155298919120896_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=8631f5&_nc_ohc=jhysecS_JLoAX9h0yXr&_nc_ht=scontent.fnic3-1.fna&oh=00_AfD2Jq_ksulDzjt-GMvyX1QpXUGBIH5Py6VPX_xHJcCeKQ&oe=64403CD6", groupName = "Destination Japan", city = "Tokyo"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.18169-9/21751855_377752725976480_7569270432595139567_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=8631f5&_nc_ohc=9oVojGUJljEAX9v7v-e&_nc_ht=scontent.fnic3-1.fna&oh=00_AfAgPQg2eSvKreMk95FWEoGvwu20XMkObEQ6Nwxrh-FGLA&oe=64400F26", groupName = "Sacramento Wedding Planning", city = "Paris"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/167154970_109995764521858_4564893878236255309_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8631f5&_nc_ohc=vN339vIfw7EAX_oeKTs&_nc_ht=scontent.fnic3-1.fna&oh=00_AfDQjRJGRZwinCmKNITXgDHlfEKJaYxJjJPsQtwUEsj6oQ&oe=6440218E", groupName = "PLANOS, IDEAS Y DISEÑOS PARA CONSTRUIR, REMODELAR MI CASA", city = "Rome"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/38190346_2571233806235956_7427730288676962304_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=8631f5&_nc_ohc=NT9mbVy0C4UAX_LK5t_&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCCZkU_myCvsOBBqhc5kWZoO2J6yWaGZv40Rh3Pq7DcKg&oe=64402F4E", groupName = "Decor Home Ideas", city = "Perm"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/61779031_829566527429679_486994702332067840_n.png?_nc_cat=110&ccb=1-7&_nc_sid=8631f5&_nc_ohc=Tn7rFHwAf80AX8gAlIh&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCdSCiJYFKzkcN-1_M2NPryXUEmwuf6SIv5g7r9F4K8RQ&oe=6440120B", groupName = "Linux Fans Group", city = "New York"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/126394071_2879153442353886_8176145036539570410_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8631f5&_nc_ohc=1a4mr4Prx5YAX9hf6yX&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCxIEOsZwER1jDuSCZyH18Xh9n4okq-CJd8gfWrJ60__w&oe=6440259C", groupName = "The Meow Universe", city = "Sidney"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/80882348_445023176165064_2235439299707273216_n.png?_nc_cat=109&ccb=1-7&_nc_sid=8631f5&_nc_ohc=8oPjSIeWacgAX_T4J2c&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCQj8_SX-h-d3cHO-hxAm3h880sYmMaCN1iiUg-sEVu4g&oe=644014B3", groupName = "Nature Heaven Group", city = "Cairo"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.18169-9/15780700_10209462364410663_3788901751600245700_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=8631f5&_nc_ohc=OOVtp7D0z2AAX9OEKt0&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCAy6RrxVZk9n53taLg86FuXQsTRFMzCKEsxlxMQdCxDQ&oe=644012AD", groupName = "Pokemon GO Bay Area", city = "Beijing"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t39.30808-6/317906054_10158839314491816_8286062341564022526_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=8631f5&_nc_ohc=tUZm3_Do3OEAX9n3rw5&_nc_ht=scontent.fnic3-1.fna&oh=00_AfAGpEsB7vOIMwKTvPl4HAbywsewAGwBaEA-9mK7cEC3mg&oe=641D2196", groupName = "Sacramento Real Estate", city = "Los Angles"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t1.6435-9/152247108_3659947190789256_3321976929274404922_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=8631f5&_nc_ohc=gyKaXFRtAOAAX9I0C1g&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCDOHCeVQY5GuJD40BfojTjSpYQ4eQTTXO-Q3eYMIgS_g&oe=64400FE1", groupName = "TANGO EVENTS & INFO FOR THE SAN FRANCISCO BAY AREA", city = "Saint-Petersburg"),
-        Group(imgUrl = "https://scontent.fnic3-1.fna.fbcdn.net/v/t39.30808-6/244338679_10217579143424393_963949541646884384_n.jpg?_nc_cat=1&ccb=1-7&_nc_sid=8631f5&_nc_ohc=aAzVwp9imI4AX-9cPWn&_nc_ht=scontent.fnic3-1.fna&oh=00_AfCGc7S1behVVbTDH-QzFnDqCBRXtU-O64e3vcHBNT9YRw&oe=641CFD94", groupName = "Gardening Ideas & More", city = "Bangkok"),
+        Group(groupName = "Celebrating R. Kelly", city = "London"),
+        Group(groupName = "Cash Frenzy Online", city = "Moscow"),
+        Group(groupName = "ZUMBA DANCE", city = "Limassol"),
+        Group(groupName = "Hawaii Vacation Planning - Plan a Trip to Hawaii", city = "Hawai"),
+        Group(groupName = "Destination Japan", city = "Tokyo"),
+        Group(groupName = "Sacramento Wedding Planning", city = "Paris"),
+        Group(groupName = "PLANOS, IDEAS Y DISEÑOS PARA CONSTRUIR, REMODELAR MI CASA", city = "Rome"),
+        Group(groupName = "Decor Home Ideas", city = "Perm"),
+        Group(groupName = "Linux Fans Group", city = "New York"),
+        Group(groupName = "The Meow Universe", city = "Sidney"),
+        Group(groupName = "Nature Heaven Group", city = "Cairo"),
+        Group(groupName = "Pokemon GO Bay Area", city = "Beijing"),
+        Group(groupName = "Sacramento Real Estate", city = "Los Angles"),
+        Group(groupName = "TANGO EVENTS & INFO FOR THE SAN FRANCISCO BAY AREA", city = "Saint-Petersburg"),
+        Group(groupName = "Gardening Ideas & More", city = "Bangkok"),
 ).apply {
     forEachIndexed { index, group ->
         group.id = "${index + 1}"
+        group.imgUrl = groupsImages[index]
     }
 }
+
+val groupsImages = listOf(
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205718Z&X-Amz-Expires=2592000&X-Amz-Signature=4EB85E14ECCD749FFBC5EFE9F67985A5067CA40DD1AFB78D06CF4B23AF7D914C&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205757Z&X-Amz-Expires=2592000&X-Amz-Signature=4AC91B921489EC3A58CADFBB845DB31FD6F6E9F8E686A88FBDB92459EE475F48&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/3.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205813Z&X-Amz-Expires=2592000&X-Amz-Signature=5BFBA4AB641B669FC63270546B5CCA9C1A7FB7EF7032AD0857852ED2FE8631A1&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/4.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205825Z&X-Amz-Expires=2592000&X-Amz-Signature=1BA67793E70BC9EAF755B205CB1E1CE9466A0199E3DA313622033DA8B8222EA7&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/5.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205835Z&X-Amz-Expires=2592000&X-Amz-Signature=D06484C2235A5930C05FED9EF1DCB741CF0C03671DCAABC389DAF4EF2BC9CE42&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/6.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205847Z&X-Amz-Expires=2592000&X-Amz-Signature=AFAF94E0793E27ED1F7262A42EDB69D1BBA455E47A18669A4B24036ACBE82D1F&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/7.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205857Z&X-Amz-Expires=2592000&X-Amz-Signature=99B3744AC31E951A09445513EB20D15AB7AB32F2A6B119E00D4AB43487A61868&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/8.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205908Z&X-Amz-Expires=2592000&X-Amz-Signature=A3538BD6A809430751A1A6596BD871079BD283878EE45C4C0E4349D0788086A0&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205920Z&X-Amz-Expires=2592000&X-Amz-Signature=A92DB9FC7534920895979A110F4DA0A9A465776B3CBB0B1DDA7395AE9E0E7240&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/10.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205932Z&X-Amz-Expires=2592000&X-Amz-Signature=853DA109C86DAB0FC16CCD992DFCC14B56FE85B0BEC3DB487F41B48FA9277EA2&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/11.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205944Z&X-Amz-Expires=2592000&X-Amz-Signature=24ACBF4978027ACA03D2EAEBBE6BEA63BDDF7741B062897477E4D5E29C602DA2&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/12.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T205955Z&X-Amz-Expires=2592000&X-Amz-Signature=3C2AA6DA25DAFC03051741D723D4A9B671995D1E31EC650AB6807FA84ADF30A9&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/13.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T210005Z&X-Amz-Expires=2592000&X-Amz-Signature=B160354B1D51F1337D14F4E6272B1BEAC7478A97EB90236620039930203FED45&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/14.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T210015Z&X-Amz-Expires=2592000&X-Amz-Signature=6E2662FA5261CA757A826123AE96AECAB07830C38560076230F86F3D11676398&X-Amz-SignedHeaders=host",
+        "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/groups/15.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T210024Z&X-Amz-Expires=2592000&X-Amz-Signature=E4C1A3C51624BBAE955786D212260D426468C0D138CAC42B7A9B4AA98AD5D460&X-Amz-SignedHeaders=host"
+)
