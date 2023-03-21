@@ -1,5 +1,6 @@
 package io.mishka.notes.entities
 
+import kotlin.math.abs
 import kotlin.random.Random
 
 enum class GroupTheme{
@@ -13,8 +14,8 @@ data class Group(
         val imgUrl: String,
         val groupName: String,
         val city: String,
-        val theme: String = GroupTheme.values()[Random.nextInt() % GroupTheme.values().size].toString(),
-        val followers: String = "${Random.nextInt() % 1000}"
+        val theme: String = GroupTheme.values()[abs(Random.nextInt()) % GroupTheme.values().size].toString(),
+        val followers: String = "${abs(Random.nextInt()) % 1000}"
 )
 
 val groups = listOf(
