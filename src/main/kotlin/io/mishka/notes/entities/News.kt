@@ -4,16 +4,17 @@ data class News(
         val imgUrl: String,
         val title: String,
         val description: String,
-        val date: String
+        val date: String,
+        var id: String = ""
 )
 
 
 val newsList = mutableListOf(
         News(
-           imgUrl = "https://dynaimage.cdn.cnn.com/cnn/digital-images/org/21c5e5b3-919c-4496-ae0d-91f32ebb8096.jpg",
-           title = "Xi and Putin meet in Moscow as Russia's war in Ukraine continues",
-           description = "US Secretary of State Antony Blinken said that Chinese President Xi Jinping’s visit with Russian President Vladimir Putin in Moscow shows China’s intent to provide “diplomatic cover” for Russia's \"atrocities committed in Ukraine\" instead of condemning them.",
-           date = "March 20"
+                imgUrl = "https://dynaimage.cdn.cnn.com/cnn/digital-images/org/21c5e5b3-919c-4496-ae0d-91f32ebb8096.jpg",
+                title = "Xi and Putin meet in Moscow as Russia's war in Ukraine continues",
+                description = "US Secretary of State Antony Blinken said that Chinese President Xi Jinping’s visit with Russian President Vladimir Putin in Moscow shows China’s intent to provide “diplomatic cover” for Russia's \"atrocities committed in Ukraine\" instead of condemning them.",
+                date = "March 20"
         ),
         News(
                 imgUrl = "https://cdn.cnn.com/cnnnext/dam/assets/230320102947-donald-trump-0318-medium-tease.jpg",
@@ -69,4 +70,8 @@ val newsList = mutableListOf(
                 description = "It was shaping up to be a golden year for tourism in Turkey. With favorable exchange rates sweetening the deal for visitors, the country’s beautiful beaches, historic cities and geological wonders were poised for a post-pandemic tourism revival. Then disaster struck. On February 6, a massive earthquake close to Turkey’s border with Syria caused major loss of life and leveled entire neighborhoods. The seismic shock and the emotional convulsions that followed were both felt across the country. Even as they were processing the catastrophe and doing their best to support their compatriots caught up in it, many working in Turkey’s tourism industry realized they had a potential problem on their own hands: Would the disaster scare away visitors?",
                 date = "March 18"
         ),
-)
+).apply {
+    forEachIndexed { index, news ->
+        news.id = "${index + 1}"
+    }
+}

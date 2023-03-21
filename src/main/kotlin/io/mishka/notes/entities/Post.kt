@@ -5,7 +5,8 @@ data class Post(
         val imgUrl: String,
         var userUrl: String = "",
         val fullName: String,
-        val date: String
+        val date: String,
+        var id: String = "",
 )
 
 val posts = listOf(
@@ -19,4 +20,10 @@ val posts = listOf(
         Post(fullName = "Mike Brown", date = "September 9", imgUrl = "https://w0.peakpx.com/wallpaper/936/809/HD-wallpaper-dalmatian-dogs-lawn-domestic-dog-cute-animals-dalmatian-pets-dogs.jpg"),
         Post(fullName = "Isabella Lopez", date = "April 1", imgUrl = "https://backoffice3.titanka.com/verticalizzazioni/4897/254/upload/1392977456_cane.jpg"),
         Post(fullName = "Kevin Nguyen", date = "March 18", imgUrl = "https://w0.peakpx.com/wallpaper/539/364/HD-wallpaper-autumn-fall-autumn-nature-lake-fog.jpg"),
-).apply { forEachIndexed { index, post -> post.userUrl = userAvatarUrls[index] } }
+).apply {
+    forEachIndexed {
+        index, post ->
+        post.id = "${index + 1}"
+        post.userUrl = userAvatarUrls[index]
+    }
+}
