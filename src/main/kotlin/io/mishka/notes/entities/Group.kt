@@ -1,10 +1,20 @@
 package io.mishka.notes.entities
 
+import kotlin.random.Random
+
+enum class GroupTheme{
+    FASHION,
+    SPORT,
+    NEWS
+}
+
 data class Group(
         var id: String = "",
         val imgUrl: String,
         val groupName: String,
-        val city: String
+        val city: String,
+        val theme: GroupTheme = GroupTheme.values()[Random.nextInt() % GroupTheme.values().size],
+        val followers: String = "${Random.nextInt() % 1000}"
 )
 
 val groups = listOf(
