@@ -1,5 +1,7 @@
 package io.mishka.notes.entities
 
+import io.mishka.notes.entities.images.userAvatarUrls
+
 data class Messages(
         val fullName: String,
         val shortText: String,
@@ -38,4 +40,8 @@ val messages = mutableListOf(
         Messages("Madison Reyes", "Generation of...", "13:15"),
         Messages("Lucas Sanchez", "Ilshahat cool boy...", "19:05"),
         Messages("Harper Gomez", "Rock like..", "11:14")
-).apply { forEachIndexed { index, message -> message.imgUrl = userAvatarUrls[index] } }
+).apply {
+    forEachIndexed { index, message ->
+        message.imgUrl = if (index >= userAvatarUrls.lastIndex) userAvatarUrls.first() else userAvatarUrls[index]
+    }
+}

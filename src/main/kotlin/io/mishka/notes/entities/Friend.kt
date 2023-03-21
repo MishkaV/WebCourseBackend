@@ -1,5 +1,6 @@
 package io.mishka.notes.entities
 
+import io.mishka.notes.entities.images.userAvatarUrls
 import kotlin.random.Random
 
 enum class Gender {
@@ -67,6 +68,6 @@ val users: MutableList<User> = mutableListOf(
 ).apply {
     forEachIndexed { index, user ->
         user.id = "${index + 1}"
-        user.imgUrl = userAvatarUrls[index]
+        user.imgUrl = if (index >= userAvatarUrls.lastIndex) userAvatarUrls.first() else userAvatarUrls[index]
     }
 }

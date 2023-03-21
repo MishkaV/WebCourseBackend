@@ -1,4 +1,4 @@
-package io.mishka.notes.entities
+package io.mishka.notes.entities.images
 
 val userAvatarUrls = listOf(
         "https://storage.yandexcloud.net/cloud-devices-integration/webcourses/avatars/1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJE6l34DUy_YO1deXjjuDUb%2F20230321%2Fru-central1%2Fs3%2Faws4_request&X-Amz-Date=20230321T202936Z&X-Amz-Expires=2592000&X-Amz-Signature=DAE7FC7C2FF3A6CBDCBE4E8B979B7F10F9D78A0B4EE83E440B738A3E886DD5AD&X-Amz-SignedHeaders=host",
