@@ -30,8 +30,8 @@ dependencies {
 	// ML
 	implementation("org.slf4j:slf4j-api:2.0.7")
 	implementation("org.slf4j:slf4j-simple:2.0.7")
-	implementation("ai.djl.pytorch:pytorch-native-auto:1.9.1")
-	implementation("ai.djl.pytorch:pytorch-model-zoo:0.21.0")
+	implementation(platform("ai.djl:bom:0.21.0"))
+	implementation("ai.djl.pytorch:pytorch-model-zoo")
 }
 
 tasks.withType<KotlinCompile> {
