@@ -13,7 +13,7 @@ data class Group(
         val imgUrl: String,
         val groupName: String,
         val city: String,
-        val theme: GroupTheme = GroupTheme.values()[Random.nextInt() % GroupTheme.values().size],
+        val theme: String = GroupTheme.values()[Random.nextInt() % GroupTheme.values().size].toString(),
         val followers: String = "${Random.nextInt() % 1000}"
 )
 
