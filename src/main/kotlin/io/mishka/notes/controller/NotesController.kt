@@ -53,6 +53,6 @@ class NotesController(val service: MessageService) {
             @RequestParam question: String,
             @RequestParam description: String
     ): String {
-        return DuckGPT.generateAnswer(question, description)
+        return DuckGPT.generateSimilar(question, description)
     }
 }

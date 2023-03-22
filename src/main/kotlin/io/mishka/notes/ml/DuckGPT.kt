@@ -16,7 +16,7 @@ object DuckGPT {
             .optProgress(ProgressBar())
             .build()
 
-    fun generateAnswer(question: String, description: String): String {
+    fun generateSimilar(question: String, description: String): String {
         println("Get question - $question")
         return try {
             val model = criteria.loadModel()
