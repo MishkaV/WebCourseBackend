@@ -1,6 +1,7 @@
 package io.mishka.notes.service
 
 import io.mishka.notes.entities.Friend
+import io.mishka.notes.entities.Group
 import io.mishka.notes.entities.News
 import io.mishka.notes.entities.toGender
 import org.springframework.jdbc.core.JdbcTemplate
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service
 @Service
 class MessageService(val db: JdbcTemplate) {
     /**
-     * Friend
+     * Users
      */
     fun getFriends(): List<Friend> = db.query("select * from friends") { response, _ ->
         Friend(
@@ -44,6 +45,20 @@ class MessageService(val db: JdbcTemplate) {
     fun saveNews(news: News) {
         db.update("insert into news values ( ?, ?, ?, ?)",
                 news.imgUrl, news.title, news.description, news.date
+        )
+    }
+
+    /**
+     * Groups
+     */
+    fun getGroups(): List<Group> = db.query("select * from groups") { response, _ ->
+        Group(
+                id = response.getString("id"),
+                imgUrl = response.getString("imgUrl"),
+                groupName = response.getString("groupName"),
+                city = response.getString("city"),
+                theme = response.getString("theme"),
+                followers = response.getString("followers"),
         )
     }
 }
